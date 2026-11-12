@@ -1,0 +1,12 @@
+flask
+scikit-learn
+pandas
+numpy
+streamlit
+altair
+matplotlib
+seaborn
+joblib
+psutil
+requests
+shap

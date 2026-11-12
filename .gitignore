@@ -1,0 +1,20 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Backup directory
+_backup_before_redesign/
+
+# Runtime logs
+logs/*.log
+
+# Internal notes & documentation excluded from GitHub
+DATA_MINING_CONCEPTUAL_DEEP_DIVE.md
+data_mining_simulation/
+DEVELOPMENT_LOG.md
+instruction.txt
+phase.txt
+PROJECT_ANALYSIS.md
+qna.txt

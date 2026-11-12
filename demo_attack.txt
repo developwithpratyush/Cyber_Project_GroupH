@@ -1,0 +1,65 @@
+Attacker
+   ↓
+Login Page
+   ↓
+Repeated login attempts
+   ↓
+Password eventually discovered
+   ↓
+Attacker enters account
+   ↓
+Suspicious actions
+   ↓
+System detects correlated behaviour
+
+
+Behaviour 1 — Authentication anomaly
+Example:
+10:00:01 Login failed
+10:00:02 Login failed
+10:00:03 Login failed
+...
+10:00:15 Login successful
+
+Features:
+failed_attempts = 15
+success_after_failures = 1
+attempt_rate = high
+
+Behaviour 2 — Network anomaly
+After successful login, simulate the account making unusually frequent requests.
+For example:
+GET /dashboard
+GET /users
+GET /admin
+GET /files
+GET /api/data
+GET /api/data
+GET /api/data
+...
+
+You don't need to actually attack a server.
+Just generate a controlled sequence of requests against your local application.
+Extract simple features:
+request_count
+requests_per_second
+unique_endpoints
+4xx_count
+5xx_count
+bytes_sent
+bytes_received
+
+Behaviour 3 — System anomaly
+The application can trigger a harmless local test process or simply generate controlled resource activity.
+For example:
+CPU usage
+memory usage
+process count
+new process created
+
+You can create a benign test process whose presence is logged as an event.
+You do not need to demonstrate real malware execution.
+Your story is:
+“After authentication, the compromised session causes abnormal application/network/system behaviour.”
+
+That's enough.

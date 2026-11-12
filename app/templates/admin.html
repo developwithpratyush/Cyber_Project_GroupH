@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — Threat Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <span>🛡️ Threat Detection System</span>
+            <span>Welcome, <strong>{{ username }}</strong> | <a href="/logout">Logout</a></span>
+        </nav>
+        <div class="content">
+            <h1>⚙️ Admin Panel</h1>
+            <div class="cards">
+                <div class="card">
+                    <h3>User Management</h3>
+                    <p>3 registered users</p>
+                </div>
+                <div class="card">
+                    <h3>Security Logs</h3>
+                    <p>Monitoring active</p>
+                </div>
+                <div class="card">
+                    <h3>System Config</h3>
+                    <p>RF Model: loaded</p>
+                </div>
+            </div>
+            <p style="margin-top:20px;"><a href="/dashboard">← Back to Dashboard</a></p>
+        </div>
+    </div>
+</body>
+</html>

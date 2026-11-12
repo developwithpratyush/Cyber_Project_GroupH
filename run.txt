@@ -1,0 +1,26 @@
+HOW TO RUN THE DEMO
+===================
+
+Terminal 1 — web app + live detector
+    python app/app.py
+
+Terminal 2 — threat dashboard (opens http://localhost:8501)
+    streamlit run dashboard/dashboard.py
+
+Terminal 3 — traffic / attacks against localhost:5000
+    python simulator/attack_simulator.py --mode normal                          # legitimate user -> stays SECURE
+    python simulator/attack_simulator.py --mode attack --profile killchain      # full multi-modal attack -> ATTACK
+    python simulator/attack_simulator.py --mode attack --profile brute_force    # auth only -> SUSPICIOUS (fusion not confirmed)
+    python simulator/attack_simulator.py --mode attack --profile scanner        # auth + network -> SUSPICIOUS
+
+Suggested presentation flow
+    1. Dashboard "Reset logs"  -> SECURE
+    2. --mode normal           -> stays SECURE
+    3. --profile brute_force   -> SUSPICIOUS: auth alarm alone is not enough (multimodal argument)
+    4. --profile killchain     -> ATTACK CONFIRMED: kill chain lights up, Blind Spot Replay, SHAP
+    5. "Prepare incident report" -> download the HTML report
+    6. What-If Lab tab         -> let the examiner try presets / sliders
+    7. Research tab            -> 5-way comparison, confusion matrices, feature importance
+
+Tip: start app.py while the laptop is idle — it records the idle memory/process baseline at startup.
+     Use "Recalibrate" on the dashboard if heavy programs were opened/closed afterwards.
